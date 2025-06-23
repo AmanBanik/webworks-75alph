@@ -1,0 +1,217 @@
+/* Reset default margins/paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Color Theme */
+:root {
+    --brilliant-red: #e23744;
+    --light-red: #ffccd1;
+    --text-light: #f5f5f5;
+    --dark-text: #2c2c2c;
+}
+
+body {
+    background-color: #fff;
+    color: var(--dark-text);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: var(--brilliant-red);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    height: 50px;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+header ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+main {
+    background: url('/img/bg.WebP') no-repeat center center/cover;   
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    color: #2c2c2c;
+;
+}
+
+
+main img {
+    width: 100px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+main p {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white; /* 👈 makes the text bright and readable */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* optional: adds contrast for readability */
+    animation: fadeInUp 1s ease-out;
+}
+
+main input {
+    width: 80%;
+    max-width: 500px;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+main input:focus {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--brilliant-red);
+    color: var(--text-light);
+}
+.video-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 300px;
+  height: auto;
+  border: 3px solid #e23744;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 9999;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  animation: slideUp 1s ease-in-out;
+}
+
+.video-popup video {
+  width: 100%;
+  height: auto;
+  display: block;
+  pointer-events: none;
+}
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: white;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.video-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 300px;
+  height: auto;
+  border: 3px solid #e23744;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 9999;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  animation: slideUp 1s ease-in-out;
+
+  transition: transform 0.3s ease;
+  transform-origin: bottom left;
+}
+
+.video-popup:hover {
+  transform: scale(1.5);
+  transition: transform 0.3s ease;
+}
+footer img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+
+
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    header {
+        flex-direction: column;
+    }
+
+    header ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
